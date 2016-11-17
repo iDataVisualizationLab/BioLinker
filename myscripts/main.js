@@ -25,73 +25,13 @@ var svgOverview = d3.select('.overviewHolder').append('svg')
     .attr("width", www)
     .attr("height", www);
 
-var svgContext = d3.select('.contextHolder').append('svg')
-    .attr("class", "contextView")
-    .attr("width", www)
-    .attr("height", www);
-
-
 
 var svg2 = d3.select("#container").append("svg")
    // .style("background", "#eed")
     .attr("width", width)
     .attr("height", height);
 
-var wPublication = width-www-wMatrix-12;
-var svg4 = d3.select(".publicationHolder").append("svg")
-    .attr("class", "publicationView")
-    //.style("background", "#eee")
-    .attr("width", wPublication)
-    .attr("height", wMatrix);
-//d3.select(".publicationView")
-//  .attr("width", 100);
 
-
-var force3 = d3.layout.force()
-    //.friction(0.5)
-    .alpha(0.1)
-    .size([wPublication, wMatrix]);
-  
-  force3.linkDistance(function(l) {
-    if (l.year){
-        return 4*(l.year-minYear);    
-    }
-    else
-      return 50;
-  });
-
-/*
-var svg3 = d3.select('.matrixHolder').append('svg')
-    //.style("background", "#eed")
-    .attr("width", wMatrix)
-    .attr("height", wMatrix)
-
-var g3 = svg3.append("g");
-      // then, create the zoom behvavior
-      var zoom = d3.behavior.zoom()
-        // only scale up, e.g. between 1x and 50x
-        .scaleExtent([1, 50])
-        .on("zoom", function() {
-          // the "zoom" event populates d3.event with an object that has
-          // a "translate" property (a 2-element Array in the form [x, y])
-          // and a numeric "scale" property
-          var e = d3.event,
-              // now, constrain the x and y components of the translation by the
-              // dimensions of the viewport
-              tx = Math.min(0, Math.max(e.translate[0], width - width * e.scale)),
-              ty = Math.min(0, Math.max(e.translate[1], height - height * e.scale));
-          // then, update the zoom behavior's internal translation, so that
-          // it knows how to properly manipulate it on the next movement
-          zoom.translate([tx, ty]);
-          // and finally, update the <g> element's transform attribute with the
-          // correct translation and scale (in reverse order)
-          g3.attr("transform", [
-            "translate(" + [tx, ty] + ")",
-            "scale(" + e.scale + ")"
-          ].join(" "));
-        });
-    svg3.call(zoom);
-*/
 
 var mouseCoordinate;
 svg2.on('mousemove', function () {
@@ -228,7 +168,6 @@ d3.json("data/cardsWithContextData.json", function(error, data_) {
   });
   
    // Construct conflicting examples in util2.js********************
-  conflitExamples();
       
   for (var i = 0; i < nodes.length; i++) {
     if (nodes[i].fields.entity_text)

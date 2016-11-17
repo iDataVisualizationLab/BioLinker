@@ -19,7 +19,6 @@ d3.tsv("data/cancerStudies.tsv", function(error, data_) {
     //  if (uniprotMap[d["id"]]==undefined || uniprotMap[d["id"]].length>=d["name"].length) // to get the readable name
     //  uniprotMap[d["id"]] = d["name"];
     //});    
-  debugger;
 }); 
 
 function processCard2(d, indexCard){
@@ -180,7 +179,6 @@ function addNodes() {
     })
     .on('mouseout', function(d) {
       tip.hide(d); 
-   //   removeTimeArcs();
     });
 
   svg2.selectAll(".link2")
@@ -305,9 +303,6 @@ function expand2(d) {
         addNodes();   
         update2();
         update1(); 
-
-        drawTimeArcs(); 
-        addStacking(); 
       }
     }); 
   getGenomics(d.fields.entity_text);  

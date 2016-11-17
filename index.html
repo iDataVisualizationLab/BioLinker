@@ -114,33 +114,6 @@ table, th, td {
   background-color: rgba(240,240,240, 1);
 }
 
- #contextHolder {
-  position:absolute;
-  z-index: 0;
-  top: 389px;
-  left: 5px;
-  border: 1px solid rgba(0,0,0, 1);
-  background-color: rgba(200,200,200, 1);
-}
-
-#publicationHolder {
-  position:absolute;
-  z-index: 0;
-  top: 450px;
-  left: 382px;
-  border: 1px solid rgba(0,0,0, 1);
-  background-color: rgba(230,230,230, 1);
-}
-
-#matrixHolder {
-  position:absolute;
-  z-index: 0;
-  top: 502px;
-  left: 900px;
-  border: 1px solid rgba(0,0,0, 1);
-  background-color: rgba(220,220,240, 1);
-}
-
 
 .axis path,
 .axis line {
@@ -168,9 +141,6 @@ table, th, td {
   <div id="searchHolder"  class="searchHolder">
   <input id="search">
   <button type="button" onclick="searchNode()">Search</button>
-  <button type="button" onclick="setSource()">Set Source</button>
-  <button type="button" onclick="setTarget()">Set Target</button>
-  <br>
   <progress value="0" max="100" id="progBar">
       <span id="downloadProgress">
           <!-- Your fallback goes here -->
@@ -185,15 +155,6 @@ table, th, td {
 
  <div id="overviewHolder"  class="overviewHolder">
 </div> 
-
- <div id="contextHolder"  class="contextHolder">
- </div> 
-
- <div id="publicationHolder"  class="publicationHolder">
- </div> 
-
- <div id="matrixHolder"  class="matrixHolder">
- </div> 
 </div>
 
 
@@ -204,12 +165,9 @@ table, th, td {
 <script src="javascripts/fisheye.js"></script>
 
 <script src="myscripts/util.js"></script>
-<script src="myscripts/util2.js"></script>
 <script src="myscripts/genomics.js"></script>
 <script src="myscripts/tooltip.js"></script>
 <script src="myscripts/stacking.js"></script>
-<script src="myscripts/TimeArcsViz.js"></script>
-<script src="myscripts/matrix.js"></script>
 <script src="myscripts/sliderRelationship.js"></script>
 <script src="myscripts/streamGraph.js"></script>
 <script src="myscripts/main.js"></script>

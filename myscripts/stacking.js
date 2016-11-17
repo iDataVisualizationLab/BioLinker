@@ -9,19 +9,7 @@
 var y_svg;
 var cellHeight2 = 11;
 
-function addStacking(){
-  svgContext.selectAll(".stackingRect").remove();
-  
-  y_svg = 0; // inital y position     
-  addStacking2("type", "Interaction types");
-  addStacking2("Context_Species", "Context-Species", speciesMap);
-  addStacking2("Context_CellType", "Context-CellType",celltypeMap);
-  addStacking2("Context_Organ", "Context-Organ", organMap);
 
-  d3.select(".contextView")
-    .attr("height", y_svg+10);
-
-}  
 
 function addStacking2(fieldName,label, map){
   y_svg += 18; // inital y position     
